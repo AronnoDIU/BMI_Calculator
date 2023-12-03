@@ -4,11 +4,11 @@ public class BMICalculator {
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
 
-        // Choose measurement units
+        // Choose measurement units (Metric or Imperial)
         System.out.print("Choose units (1 for Metric, 2 for Imperial): ");
         int choice = userInput.nextInt();
 
-        double weight, height;
+        double weight, height; // Declare variables for weight and height
 
         if (choice == 1) { // Metric units
             // Get user input for weight in kilograms
@@ -31,21 +31,22 @@ public class BMICalculator {
             return;
         }
 
-        // Calculate BMI
+        // Calculate BMI using the calculateBMI method
         double bmi = calculateBMI(weight, height);
 
-        // Display BMI information
+        // Display BMI information to the user
         System.out.println("Your BMI is: " + bmi);
         System.out.println("BMI Category: " + getBMICategory(bmi));
-        displayHealthAdvice(bmi);
+        displayHealthAdvice(bmi); // Display health advice based on BMI
 
-        userInput.close();
+        userInput.close(); // Close scanner
     }
 
     // Method to get positive input from the user
     private static double getPositiveInput(Scanner scanner) {
         double input;
         do {
+            // Check if input is a double (number)
             while (!scanner.hasNextDouble()) {
                 System.out.println("Invalid input. Please enter a valid number.");
                 scanner.next(); // consume the invalid input
@@ -60,9 +61,9 @@ public class BMICalculator {
         return input;
     }
 
-    // Method to calculate BMI
+    // Method to calculate BMI based on weight and height
     private static double calculateBMI(double weight, double height) {
-        return weight / (height * height);
+        return weight / (height * height); // BMI formula
     }
 
     // Method to determine BMI category
