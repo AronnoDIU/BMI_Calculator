@@ -11,7 +11,7 @@ public class BMICalculator {
         double weight, height; // Declare variables for weight and height
 
         if (choice == 1) { // Metric units
-            // Get user input for weight in kilog
+            // Get user input for weight in KG
             System.out.print("Enter your weight in kilograms: ");
             weight = getPositiveInput(userInput);
 
